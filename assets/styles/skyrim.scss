@@ -1,0 +1,103 @@
+#skyrim {
+  background-color: #241E00;
+  background-image: url('../images/bg-skyrim.png');
+  min-height: 100vh;
+  padding: 50px;
+
+  h1 {
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  #alchemy-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    .list-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        color: #FFFFFF;
+        padding-bottom: 5px;
+      }
+
+      select {
+        border-radius: 5px;
+        border: 1px solid #241E00;
+        font-size: 15px;
+        padding: 10px 20px;
+        width: 450px;
+      }
+    }
+
+    .separator {
+      color: #FFFFFF;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  }
+
+  #alchemy-result {
+    margin: 50px auto;
+    width: 900px;
+
+    ul {
+      line-height: 25px;
+      margin: 0;
+      padding: 0 0 0 15px;
+    }
+
+    .ingredient-detail-wrapper {
+      background-color: #938D71;
+      border: 1px solid #241E00;
+      padding: 20px;
+      border-radius: 5px;
+
+      ul {
+        margin-top: 15px;
+      }
+    }
+
+    .reacting-ingredient-wrapper {
+      margin-top: 30px;
+    }
+
+    table {
+      border: 1px solid #241E00;
+      border-collapse: collapse;
+      width: 100%;
+
+      th, tfoot td {
+        background-color: #241E00;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 5px 10px;
+        text-align: center;
+      }
+
+      td {
+        background-color: #938D71;
+        border: 1px solid #241E00;
+        padding: 15px;
+      }
+
+      tfoot td {
+        text-align: right;
+      }
+    }
+
+    .common-effect {font-weight: bold;}
+  }
+}

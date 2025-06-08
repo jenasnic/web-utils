@@ -1,0 +1,57 @@
+$baltic-sea: #302F33;
+$steal-grey: #1F1E30;
+$white: #FFFFFF;
+
+body {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+#back {
+  background-color: $white;
+  border-radius: 50%;
+  border: 1px solid $steal-grey;
+  height: 60px;
+  left: 30px;
+  position: fixed;
+  top: 30px;
+  width: 60px;
+
+  &:after {
+    border-left: 7px solid $steal-grey;
+    border-radius: 7px;
+    border-top: 7px solid $steal-grey;
+    content: "";
+    height: 30px;
+    left: 16px;
+    position: absolute;
+    top: 11px;
+    transform: rotate(-45deg);
+    width: 30px;
+  }
+}
+
+#home {
+  align-items: center;
+  background-color: $baltic-sea;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+
+  .tile {
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $steal-grey;
+    color: $steal-grey;
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+    font-weight: 700;
+    justify-content: center;
+    padding: 50px;
+    text-decoration: none;
+  }
+}

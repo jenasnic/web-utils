@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div id="home">
+    {% for title, route in utils %}
+      <a href="{{ route }}" class="tile">{{ title }}</a>
+    {% endfor %}
+  </div>
+{% endblock %}

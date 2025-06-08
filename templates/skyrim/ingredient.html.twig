@@ -1,0 +1,44 @@
+{#
+@var \App\Entity\Skyrim\Ingredient ingredient
+@var array<\App\Entity\Skyrim\Ingredient> ingredients
+#}
+
+<div class="ingredient-detail-wrapper">
+  <div>Effets connus pour : <strong>{{ ingredient.nameFR }} ({{ ingredient.nameEN }})</strong></div>
+  <ul>
+  {% for effect in ingredient.effects %}
+      <li>{{ effect.nameFR }} ({{ effect.nameEN }})</li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="reacting-ingredient-wrapper">
+  <h2>Ingrédients compatibles pour : <strong>{{ ingredient.nameFR }} ({{ ingredient.nameEN }})</strong></h2>
+  <table>
+      <thead>
+          <tr>
+            <th>Ingrédient</th>
+            <th>Effets</th>
+          </tr>
+      </thead>
+      <tbody>
+      {% for otherIngredient in ingredients %}
+          {% if (otherIngredient != ingredient) %}
+          <tr>
+              <td>{{ otherIngredient.nameFR }} ({{ otherIngredient.nameEN }})</td>
+              <td>
+                  <ul>
+                  {% for effect in otherIngredient.effects %}
+                      <li {% if (ingredient.hasEffect(effect)) %}class="common-effect"{% endif %}>{{ effect.nameFR }} ({{ effect.nameEN }})</li>
+                  {% endfor %}
+                  </ul>
+              </td>
+          </tr>
+          {% endif %}
+      {% endfor %}
+      </tbody>
+      <tfoot>
+          <tr><td colspan="2">Total : {{ ingredients|length }} ingrédients</td></tr>
+      </tfoot>
+  </table>
+</div>

@@ -1,0 +1,47 @@
+{#
+@var array<\App\Entity\Skyrim\Ingredient> ingredients
+@var array<\App\Entity\Skyrim\Effect> effects
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Skyrim{% endblock %}
+
+{% block body %}
+
+  <div id="skyrim">
+
+    <h1>Skyrim - Alchimie</h1>
+
+    <div id="alchemy-form">
+
+      <div class="list-wrapper">
+        <label for="skyrim-ingredient-list" class="label">Ingrédient</label>
+        <select id="skyrim-ingredient-list" class="skyrim-alchemy-list">
+          <option value="">-- Sélectionner un ingrédient --</option>
+          {% for ingredient in ingredients %}
+            <option value="{{ ingredient.id }}">{{ ingredient.nameFR }} ({{ ingredient.nameEN }})</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="separator">OU</div>
+
+      <div class="list-wrapper">
+        <label for="skyrim-effect-list" class="label">Effet</label>
+        <select id="skyrim-effect-list" class="skyrim-alchemy-list">
+          <option value="">-- Sélectionner un effet --</option>
+          {% for effect in effects %}
+            <option value="{{ effect.id }}">{{ effect.nameFR }} ({{ effect.nameEN }})</option>
+          {% endfor %}
+        </select>
+      </div>
+
+    </div>
+
+    <div id="alchemy-result">
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Web Utils{% endblock %}</title>
+    <link rel="icon" href="{{ asset('images/icon.png') }}">
+    {% block importmap %}{{ importmap('app') }}{% endblock %}
+  </head>
+  <body>
+    <a id="back" href="{{ path('home') }}"></a>
+    {% block body %}{% endblock %}
+  </body>
+</html>
