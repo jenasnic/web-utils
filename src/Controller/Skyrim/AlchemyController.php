@@ -30,8 +30,16 @@ class AlchemyController extends AbstractController
     #[Route(path: '/skyrim/ajax/ingredient/{ingredient}', name: 'skyrim_ingredient')]
     public function ingredient(Ingredient $ingredient): Response
     {
+        $effects = [];
+        foreach ($ingredient->getEffects() as $effect) {
+            /** @var int $effectId */
+            $effectId = $effect->getId();
+            $effects[$effectId] = $this->ingredientRepository->findAllWithEffect($effectId);
+        }
+
         return $this->render('skyrim/ingredient.html.twig', [
             'ingredient' => $ingredient,
+            'effects' => $effects,
             'ingredients' => $this->ingredientRepository->findReactingWithIngredient($ingredient),
         ]);
     }

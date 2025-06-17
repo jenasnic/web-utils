@@ -18,6 +18,4 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN mkdir -p /.composer/cache
 RUN chmod -R 777 /.composer/cache
 
-USER www-data
-
 WORKDIR /www

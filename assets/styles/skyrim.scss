@@ -52,10 +52,33 @@
     margin: 50px auto;
     width: 900px;
 
-    ul {
+    ul.ingredient-detail {
       line-height: 25px;
       margin: 0;
       padding: 0 0 0 15px;
+
+      li {
+        cursor: pointer;
+        position: relative;
+
+        ul.reacting-ingredients {
+          display: none;
+          position: absolute;
+        }
+
+        &:hover {
+          ul.reacting-ingredients {
+            background-color: #241E00;
+            color: #FFFFFF;
+            display: block;
+            left: 10px;
+            margin: 0;
+            padding: 20px 40px;
+            top: 25px;
+            z-index: 9;
+          }
+        }
+      }
     }
 
     .ingredient-detail-wrapper {

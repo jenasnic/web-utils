@@ -5,9 +5,17 @@
 
 <div class="ingredient-detail-wrapper">
   <div>Effets connus pour : <strong>{{ ingredient.nameFR }} ({{ ingredient.nameEN }})</strong></div>
-  <ul>
+  <ul class="ingredient-detail">
   {% for effect in ingredient.effects %}
-      <li>{{ effect.nameFR }} ({{ effect.nameEN }})</li>
+    <li>
+      {{ effect.nameFR }} ({{ effect.nameEN }})
+      <ul class="reacting-ingredients">
+        {% for reactingEngredient in effects[effect.id] %}
+          <li>{{ reactingEngredient.nameFR }} ({{ reactingEngredient.nameEN }})</li>
+        {% endfor %}
+      </ul>
+      <span class="ingredient-toggle-button"></span>
+    </li>
   {% endfor %}
   </ul>
 </div>

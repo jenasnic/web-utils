@@ -40,6 +40,7 @@ class IngredientRepository extends ServiceEntityRepository
             ->createQueryBuilder('ingredient')
             ->innerJoin('ingredient.effects', 'effect', Join::WITH, 'effect.id = :effectId')
             ->setParameter('effectId', $effectId)
+            ->addOrderBy('ingredient.nameFR')
         ;
 
         return $queryBuilder->getQuery()->getResult();
